@@ -2,10 +2,7 @@ package com.pluralsight;
 
 public class Data {
 
-    public Data() {
-    }
-
-    public static class room {
+    public static class Room {
         int numberOfBeds;
         double price;
         boolean occupied;
@@ -29,6 +26,7 @@ public class Data {
         }
 
         public boolean isOccupied() {
+
             return occupied;
         }
 
@@ -36,8 +34,7 @@ public class Data {
             this.occupied = occupied;
         }
 
-        public boolean isDirty() {
-            return dirty;
+        public boolean isDirty() {return dirty;
         }
 
         public void setDirty(boolean dirty) {
@@ -45,14 +42,15 @@ public class Data {
         }
 
         public boolean isAvailable() {
-            return available;
+
+            return !dirty && 0 > numberOfBeds && !occupied;
         }
 
         public void setAvailable(boolean available) {
             this.available = available;
         }
 
-        public room(int numberOfBeds, double price, boolean occupied, boolean dirty, boolean available) {
+        public Room(int numberOfBeds, double price, boolean occupied, boolean dirty, boolean available) {
             this.numberOfBeds = numberOfBeds;
             this.price = price;
             this.occupied = occupied;
@@ -60,7 +58,7 @@ public class Data {
             this.available = available;
         }
     }
-    public static class reservation{
+    public static class Reservation{
 
         String roomType;
         int price;
@@ -68,7 +66,7 @@ public class Data {
         boolean weekend;
         double resevationTotal;
 
-        public reservation(String roomType, int price, int numberOfNights, boolean weekend, double resevationTotal) {
+        public Reservation(String roomType, int price, int numberOfNights, boolean weekend, double resevationTotal) {
             this.roomType = roomType;
             this.price = price;
             this.numberOfNights = numberOfNights;
@@ -76,8 +74,13 @@ public class Data {
             this.resevationTotal = resevationTotal;
         }
 
-        public String getRoomType() {
-            return roomType;
+        public String getRoomType(boolean isKing) {
+
+            if (isKing){
+                return "King";
+            }
+            else {return "Double";
+            }
         }
 
         public void setRoomType(String roomType) {
@@ -85,7 +88,10 @@ public class Data {
         }
 
         public int getPrice() {
-            return price;
+            if (roomType.equals("King")){
+                return 139;
+            }else {return 124;
+            }
         }
 
         public void setPrice(int price) {
@@ -116,7 +122,7 @@ public class Data {
             this.resevationTotal = resevationTotal;
         }
     }
-    private static class employee{
+    private static class Employee{
         String id;
         String name;
         String department;
@@ -126,7 +132,7 @@ public class Data {
         double regularHours;
         double overtimeHours;
 
-        public employee(String id, String name, String department, float payRate, float hoursWorked, double totalPay, double regularHours, double overtimeHours) {
+        public Employee(String id, String name, String department, float payRate, float hoursWorked, double totalPay, double regularHours, double overtimeHours) {
             this.id = id;
             this.name = name;
             this.department = department;

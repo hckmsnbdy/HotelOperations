@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f68e12ae-81b2-4b19-b4b6-7b01c4f45bdc" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/MainApp.java" afterDir="false" />
+    <list default="true" id="f68e12ae-81b2-4b19-b4b6-7b01c4f45bdc" name="Changes" comment="Renamed: MainApp(new name is Data)&#10;Created new class(MainApp)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/MainApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,11 +71,40 @@
       <option name="project" value="LOCAL" />
       <updated>1760981680108</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="created room, reservation, employees classes with constructors, getters and setters">
+      <option name="closed" value="true" />
+      <created>1760983261132</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1760983261132</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Renamed: MainApp(new name is Data)&#10;Created new class(MainApp)">
+      <option name="closed" value="true" />
+      <created>1760983445086</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1760983445086</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="created room, reservation, employees classes with constructors, getters and setters" />
+    <MESSAGE value="Renamed: MainApp(new name is Data)&#10;Created new class(MainApp)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed: MainApp(new name is Data)&#10;Created new class(MainApp)" />
   </component>
 </project>
