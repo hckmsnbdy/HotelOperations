@@ -14,8 +14,8 @@ package com.pluralsight;
 /**
  Modify the Room class to add checkIn(), checkout() and cleanroom()
  methods to the room.
- Once a room has been checked in, it should be occupied and marked as dirty.
- When a guest checks out of a room it must first be cleaned by a housekeeper
+ + Once a room has been checked in, it should be occupied and marked as dirty.
+ - When a guest checks out of a room it must first be cleaned by a housekeeper
  before another guest can check into the room.
  */
 
@@ -35,14 +35,18 @@ public class Room {
     }
 
     public boolean cleanRoom(){
-        return cleanRoom();
+        if (checkOut){
+        return cleanRoom;}
+        else {
+            return !cleanRoom;
+        }
     }
 
     public boolean checkOut(){
-        return checkOut();
+        return checkOut;
     }
     public boolean checkIn(){
-        return checkIn();
+        return checkIn;
     }
 
     public int getNumberOfBeds() {

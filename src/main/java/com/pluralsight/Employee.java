@@ -1,5 +1,8 @@
 package com.pluralsight;
-
+import java.time.LocalTime;
+// Truncate to seconds, effectively removing nanoseconds/milliseconds
+//import java.time.temporal.ChronoUnit;
+//LocalTime timeWithoutMillis = currentTime.truncatedTo(ChronoUnit.SECONDS);
 /**
  * Employee
  * The Employee class is used to store and calculate payroll information about and
@@ -30,14 +33,27 @@ package com.pluralsight;
 public class Employee {
     private int employeeId;
     private String name, department;
-    private double payRate, hoursWorked;
+    private double payRate, hoursWorked, punchIn, punchOut;
 
-    public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
+    public Employee(int employeeId, String name, String department, double payRate, double hoursWorked,double punchIn, double punchOut) {
         this.employeeId = employeeId;
         this.name = name;
         this.department = department;
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
+        this.punchIn = punchIn;
+        this.punchOut = punchOut;
+    }
+    public double punchIn(){
+        return punchIn;
+    }
+    public double punchOut(){
+        if (punchIn != 0);
+        return punchOut;
+    }
+
+    public String getDepartment() {
+        return department;
     }
 
     public double getTotalPay() {
