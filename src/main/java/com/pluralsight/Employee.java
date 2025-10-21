@@ -44,6 +44,9 @@ public class Employee {
         this.punchIn = punchIn;
         this.punchOut = punchOut;
     }
+    public double getHoursWorked(){
+        return this.punchOut - this.punchIn;
+    }
     public double punchIn(){
         return punchIn;
     }
@@ -66,7 +69,7 @@ public class Employee {
 
     //Will return 40 or less, based on their hours worked
     public double getRegularHours() {
-        if (this.hoursWorked <= 40) {
+        if (this.getHoursWorked()*5 <= 40) {
             return this.hoursWorked;
         } else {
             return 40;
@@ -75,8 +78,8 @@ public class Employee {
 
     //Will hours worked over 40
     public double getOvertimeHours() {
-        if (this.hoursWorked > 40) {
-            return this.hoursWorked - 40;
+        if (this.getHoursWorked()*5 > 40) {
+            return this.getHoursWorked() - 40;
         } else {
             return 0;
         }
