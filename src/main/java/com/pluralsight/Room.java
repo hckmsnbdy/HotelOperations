@@ -21,32 +21,42 @@ package com.pluralsight;
 
 public class Room {
     private int numberOfBeds;
-    private boolean occupied, dirty,cleanRoom ,checkIn ,checkOut ;
+    private boolean occupied, dirty;
     private double price;
 
-    public Room(int numberOfBeds, boolean occupied, boolean dirty, double price,boolean checkIn, boolean checkOut, boolean cleanRoom) {
+    public Room(int numberOfBeds, boolean occupied, boolean dirty, double price) {
         this.numberOfBeds = numberOfBeds;
         this.occupied = occupied;
         this.dirty = dirty;
         this.price = price;
-        this.cleanRoom = cleanRoom;
-        this.checkIn = checkIn;
-        this.checkOut = checkOut;
     }
 
     public boolean cleanRoom(){
-        if (checkOut){
-        return cleanRoom;}
-        else {
-            return !cleanRoom;
-        }
+//        if (dirty){
+            dirty=false;
+//            return true;
+//        }
+//        else {
+            return true;
+//        }
     }
 
     public boolean checkOut(){
-        return checkOut;
+        if(occupied){
+            occupied=false;
+            dirty = true;
+            return true;
+        }else {
+        return false;}
     }
+
     public boolean checkIn(){
-        return checkIn;
+        if(!this.dirty && !this.occupied){
+            occupied=true;
+            dirty = true;
+            return true;
+        }else {
+        return false;}
     }
 
     public int getNumberOfBeds() {
@@ -54,19 +64,12 @@ public class Room {
     }
 
     public boolean isOccupied() {
-        if (checkIn){
-        return this.occupied;
-        } else {
-            return !occupied;
-        }
+            return occupied;
     }
 
     public boolean isDirty() {
-        if (checkIn){
-            return this.dirty;
-        } else {
-            return !dirty;
-        }
+            return dirty;
+
     }
 
     public double getPrice() {
@@ -76,5 +79,4 @@ public class Room {
     public boolean isAvailable() {
         return (!this.dirty && !this.occupied);
     }
-
 }

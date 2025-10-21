@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f68e12ae-81b2-4b19-b4b6-7b01c4f45bdc" name="Changes" comment="Fixed: previous exercise(Class;room,Employee,Reservation)&#10;Added methods: cleanRoom, checkIn, checkOut.">
+    <list default="true" id="f68e12ae-81b2-4b19-b4b6-7b01c4f45bdc" name="Changes" comment="fixed : get hours worked">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Hotel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Main.java" afterDir="false" />
@@ -37,6 +38,9 @@
     &quot;accountId&quot;: &quot;d257d66d-fe05-471f-82db-9a0c23920f56&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -105,7 +109,23 @@
       <option name="project" value="LOCAL" />
       <updated>1761058312980</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added: &#10; - punchIn,punchOut in Employee.java&#10; - conditions in punchOut, cleanRoom, occupied, dirty">
+      <option name="closed" value="true" />
+      <created>1761061796477</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761061796477</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixed : get hours worked">
+      <option name="closed" value="true" />
+      <created>1761062395096</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761062395096</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -125,6 +145,41 @@
     <MESSAGE value="Renamed: MainApp(new name is Data)&#10;Created new class(MainApp)" />
     <MESSAGE value="tested, created : room class and members" />
     <MESSAGE value="Fixed: previous exercise(Class;room,Employee,Reservation)&#10;Added methods: cleanRoom, checkIn, checkOut." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed: previous exercise(Class;room,Employee,Reservation)&#10;Added methods: cleanRoom, checkIn, checkOut." />
+    <MESSAGE value="Added: &#10; - punchIn,punchOut in Employee.java&#10; - conditions in punchOut, cleanRoom, occupied, dirty" />
+    <MESSAGE value="fixed : get hours worked" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed : get hours worked" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pluralsight/Employee.java</url>
+          <line>49</line>
+          <properties class="com.pluralsight.Employee" method="punchIn">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pluralsight/Employee.java</url>
+          <line>54</line>
+          <properties class="com.pluralsight.Employee" method="punchIn">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pluralsight/Employee.java</url>
+          <line>60</line>
+          <properties class="com.pluralsight.Employee" method="punchOut">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

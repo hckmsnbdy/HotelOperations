@@ -33,28 +33,46 @@ import java.time.LocalTime;
 public class Employee {
     private int employeeId;
     private String name, department;
-    private double payRate, hoursWorked, punchIn, punchOut;
+    private double payRate, hoursWorked,startTime;
 
-    public Employee(int employeeId, String name, String department, double payRate, double hoursWorked,double punchIn, double punchOut) {
+    public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
         this.name = name;
         this.department = department;
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
-        this.punchIn = punchIn;
-        this.punchOut = punchOut;
+
     }
     public double getHoursWorked(){
-        return this.punchOut - this.punchIn;
-    }
-    public double punchIn(){
-        return punchIn;
-    }
-    public double punchOut(){
-        if (punchIn != 0);
-        return punchOut;
+        return hoursWorked;
     }
 
+    public void punchIn(){
+        LocalTime time = LocalTime.now();
+
+    }
+
+    public void punchIn(double time){
+        this.startTime = LocalTime.now();
+
+
+    }
+
+    public void punchOut(double time){
+        this.hoursWorked +=(time - this.startTime);
+        this.startTime= 0;
+    }
+    public void punchOut(){
+
+    }
+    public void punchTimeCard(double time){
+        if (this.startTime>0){
+            this.hoursWorked+=(time- this.startTime);
+            this.startTime = 0;
+        }else {
+            this.startTime = time;
+        }
+    }
     public String getDepartment() {
         return department;
     }
