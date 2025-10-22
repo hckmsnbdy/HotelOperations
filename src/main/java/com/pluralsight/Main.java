@@ -1,25 +1,16 @@
 package com.pluralsight;
 
-import java.time.LocalTime;
-
 public class Main {
+
     public static void main(String[] args) {
-        Reservation r = new Reservation("King", 40, true);
 
-        System.out.println(r.getReservationTotal());
+        Employee eldar = new Employee(1, "Omer", "R&D", 40.50, 0);
 
-        Room room = new Room(
-                4,
-                true,
-                true,
-                r.getReservationTotal());
+        eldar.punchTimeCard(8.30);
 
-        Room room1 = new Room(
-                4,
-                true,
-                true,
-                r.getReservationTotal());
-        System.out.println();
+        eldar.punchTimeCard(04.30);
+
+        System.out.println(eldar.getRegularHours());
+        System.out.println(eldar.getTotalPay());
     }
-
 }
