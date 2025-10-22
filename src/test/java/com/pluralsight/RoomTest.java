@@ -33,6 +33,13 @@ class RoomTest {
 
     @Test
     void cleanRoom() {
+        // arrange
+        Room testRoom = new Room(5, 100);
 
+        // act
+        testRoom.cleanRoom();
+
+        // assert
+        assertFalse(testRoom.isDirty());
     }
 }
