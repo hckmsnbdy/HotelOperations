@@ -1,20 +1,19 @@
+
 package com.pluralsight;
 
 public class Hotel {
+    private int numberOfSuites, numberOfRooms, bookedSuites, bookedBasicRooms;
     private String name;
-    private int numberOfSuites;
-    private int numberOfRooms;
-    private int bookedSuites;
-    private int bookedBasicRooms;
 
-    public Hotel(String name, int numberOfSuites, int numberOfRooms) {
+    Hotel(String name, int numberOfSuites, int numberOfRooms) {
         this.name = name;
-        this.numberOfSuites = 0;
-        this.numberOfRooms = 0;
+        this.numberOfSuites = numberOfSuites;
+        this.numberOfRooms = numberOfRooms;
+        this.bookedBasicRooms = 0;
+        this.bookedSuites = 0;
     }
-    public Hotel (String name, int numberOfSuites
-            , int numberOfRooms, int bookedSuites
-            , int bookedBasicRooms){
+
+    Hotel(String name, int numberOfSuites, int numberOfRooms, int bookedSuites, int bookedBasicRooms) {
         this.name = name;
         this.numberOfSuites = numberOfSuites;
         this.numberOfRooms = numberOfRooms;
@@ -22,19 +21,27 @@ public class Hotel {
         this.bookedSuites = bookedSuites;
     }
 
-    private void setName(String name) {
-        this.name = name;
+    public boolean bookRoom(int numberOfRooms, boolean isSuite) {
+        if (isSuite) {
+            if (getAvailableSuites() >= numberOfRooms) {
+                this.bookedSuites += numberOfRooms;
+                return true;
+            }
+        } else {
+            if (getAvailableRooms() >= numberOfRooms) {
+                this.bookedBasicRooms += numberOfRooms;
+                return true;
+            }
+        }
+        return false;
     }
 
-    private void setNumberOfSuites(int numberOfSuites) {
-        this.numberOfSuites = numberOfSuites;
+    public int getAvailableRooms() {
+        return this.numberOfRooms - this.bookedBasicRooms;
     }
 
-    private void setBookedSuites(int bookedSuites) {
-        this.bookedSuites = bookedSuites;
+    public int getAvailableSuites() {
+        return this.numberOfSuites - this.bookedSuites;
     }
 
-    private void setBookedBasicRooms(int bookedBasicRooms) {
-        this.bookedBasicRooms = bookedBasicRooms;
-    }
 }

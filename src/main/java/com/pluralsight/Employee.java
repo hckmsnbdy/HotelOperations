@@ -1,39 +1,11 @@
 package com.pluralsight;
-import java.time.LocalTime;
-// Truncate to seconds, effectively removing nanoseconds/milliseconds
-//import java.time.temporal.ChronoUnit;
-//LocalTime timeWithoutMillis = currentTime.truncatedTo(ChronoUnit.SECONDS);
-/**
- * Employee
- * The Employee class is used to store and calculate payroll information about and
- * employee. It should manage the following information using private variables:
- * employeeId, name, department, payRate, hoursWorked.
- * Include the following derived getters (you may also include others as necessary):
- * getTotalPay
- * getRegularHours
- * getOvertimeHours
- */
 
-/**
- * Modify the Employee class to add a punchIn and punchOut methods. Each
- * time the employee punches in, we track their start time.
- * When they punch out, we calculate how many hours they have worked and add
- * that time to their hours worked.
- * To keep the math simple for now, each function will take a double as an input
- * argument.
- * punchIn(double time)
- * punchOut(double time)
- * 37
- * Example
- * input variables for time
- * 10:00 am => 10.0
- * 12:30 pm => 12.5
- * 2:45 pm => 14.75
- */
+import java.time.LocalDateTime;
+
 public class Employee {
     private int employeeId;
     private String name, department;
-    private double payRate, hoursWorked,startTime;
+    private double payRate, hoursWorked, startTime;
 
     public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
@@ -41,40 +13,6 @@ public class Employee {
         this.department = department;
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
-
-    }
-    public double getHoursWorked(){
-        return hoursWorked;
-    }
-
-    public void punchIn(){
-        LocalTime time = LocalTime.now();
-
-    }
-
-    public void punchIn(double time){
-        this.startTime = LocalTime.now();
-
-
-    }
-
-    public void punchOut(double time){
-        this.hoursWorked +=(time - this.startTime);
-        this.startTime= 0;
-    }
-    public void punchOut(){
-
-    }
-    public void punchTimeCard(double time){
-        if (this.startTime>0){
-            this.hoursWorked+=(time- this.startTime);
-            this.startTime = 0;
-        }else {
-            this.startTime = time;
-        }
-    }
-    public String getDepartment() {
-        return department;
     }
 
     public double getTotalPay() {
@@ -85,21 +23,62 @@ public class Employee {
         return regularPay + overtimePay;
     }
 
-    //Will return 40 or less, based on their hours worked
     public double getRegularHours() {
-        if (this.getHoursWorked()*5 <= 40) {
+        if (this.hoursWorked <= 40) {
             return this.hoursWorked;
         } else {
             return 40;
         }
     }
 
-    //Will hours worked over 40
     public double getOvertimeHours() {
-        if (this.getHoursWorked()*5 > 40) {
-            return this.getHoursWorked() - 40;
+        if (this.hoursWorked > 40) {
+            return this.hoursWorked - 40;
         } else {
             return 0;
+        }
+    }
+
+    public void punchIn(double time) {
+        this.startTime = time;
+    }
+
+    public void punchIn() {
+        LocalDateTime now = LocalDateTime.now();
+        this.startTime = now.getHour() + (now.getMinute() / 60);
+    }
+
+    public void punchOut(double time) {
+        this.hoursWorked += (time - this.startTime);
+        this.startTime = -1;
+    }
+
+    public void punchOut() {
+        LocalDateTime now = LocalDateTime.now();
+        double time = now.getHour() + (now.getMinute() / 60);
+        this.hoursWorked += (time - this.startTime);
+        this.startTime = -1;
+    }
+
+    public void punchTimeCard(double time) {
+
+        if (this.startTime > -1) {
+            this.hoursWorked += (time - this.startTime);
+            this.startTime = 0;
+        } else {
+            this.startTime = time;
+        }
+    }
+
+    public void punchTimeCard() {
+        LocalDateTime now = LocalDateTime.now();
+        double time = now.getHour() + (now.getMinute() / 60);
+
+        if (this.startTime > -1) {
+            this.hoursWorked += (time - this.startTime);
+            this.startTime = 0;
+        } else {
+            this.startTime = time;
         }
     }
 
